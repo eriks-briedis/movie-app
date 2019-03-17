@@ -16,6 +16,7 @@ import { MovieDetailsComponent } from './movie-details/movie-details.component';
 import { HeaderComponent } from './shared/layout/header/header.component';
 
 import { SplitPipe } from './core/pipes/split.pipe';
+import { AboutComponent } from './about/about.component';
 
 const appRoutes = [
     {
@@ -23,6 +24,9 @@ const appRoutes = [
     },
     {
         path: 'movie/:id', component: MovieDetailsComponent
+    },
+    {
+        path: 'about', component: AboutComponent
     },
 ];
 
@@ -35,7 +39,8 @@ const appRoutes = [
         MoviesListItemComponent,
         MovieDetailsComponent,
         HeaderComponent,
-        SplitPipe
+        SplitPipe,
+        AboutComponent
     ],
     imports: [
         BrowserModule,
