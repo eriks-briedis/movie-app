@@ -1,0 +1,5 @@
+<app-header></app-header>
+<div style="text-align:center" class="container">
+    <search (movies)="onSearched($event)"></search>
+    <movies-list [movies]="movies" [queryParams]="queryParams"></movies-list>
+</div>

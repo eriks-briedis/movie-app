@@ -1,0 +1,6 @@
+<div class="movie-list">
+    <movies-list-item class="movie-item" *ngFor="let movie of movies" [movie]="movie"></movies-list-item>
+</div>
+<div *ngIf="queryParams.hasNextPage">
+    <a href="#" class="btn btn-secondary" (click)="loadMore($event)">More</a>
+</div>

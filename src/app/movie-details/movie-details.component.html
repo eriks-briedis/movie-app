@@ -1,0 +1,23 @@
+<app-header></app-header>
+<div *ngIf="movieDetails" class="container">
+    <div class="row">
+        <div class="col-6">
+            <img src="{{ movieDetails.Poster }}" />
+        </div>
+        <div class="col-6">
+            <h2>{{ movieDetails.Title }} ({{ movieDetails.Year }})</h2>
+            <div class="mb-3 pb-3 border-bottom">
+                <em>Released: {{ movieDetails.Released | date:"dd-MM-yyyy" }}</em>
+            </div>
+            <div class="mb-3 pb-3 border-bottom">
+                <strong>Actors:</strong>
+                <ul class="mb-0">
+                    <li *ngFor="let actor of movieDetails.Actors | split">
+                        {{ actor }}
+                    </li>
+                </ul>
+            </div>
+            <p>{{ movieDetails.Plot }}</p>
+        </div>
+    </div>
+</div>

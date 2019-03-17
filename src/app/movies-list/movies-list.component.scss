@@ -1,0 +1,10 @@
+.movie {
+    &-list {
+        display: grid;
+        grid-template-columns: 25% 25% 25% 25%;
+    }
+
+    &-item {
+        margin: 0 10px 25px;
+    }
+}

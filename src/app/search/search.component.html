@@ -1,0 +1,24 @@
+<form [formGroup]="searchForm">
+    <div class="mb-4">
+        <div class="form-row">
+            <div class="col-6">
+                <input type="search" class="form-control" placeholder="Search..." formControlName="searchValue" required />
+            </div>
+            <div class="col-2">
+                <select formControlName="type" class="form-control">
+                    <option value="">Any</option>
+                    <option value="movie">Movie</option>
+                    <option value="series">Series</option>
+                    <option value="episode">Episode</option>
+                    <option value="game">Game</option>
+                </select>    
+            </div>
+            <div class="col-2">
+                <input type="number" class="form-control" placeholder="Year" formControlName="year">
+            </div>
+            <div class="col-2">
+                <a href="#" class="btn btn-primary" (click)="onSearch($event)">Search!</a>
+            </div>
+        </div>
+    </div>
+</form>
