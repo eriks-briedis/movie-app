@@ -24,7 +24,7 @@ export class QueryParams {
         if (this.year) {
             queryString += `&y=${this.year}`;
         }
-
+            
         return `${queryString}&page=${this.page}`;
     }
 

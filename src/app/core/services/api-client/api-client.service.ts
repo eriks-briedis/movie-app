@@ -1,7 +1,7 @@
 import { environment } from './../../../../environments/environment';
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
-import {MovieModel, SearchResponse, QueryParams} from "../../models";
+import { MovieModel, MovieDetailsModel, SearchResponse, QueryParams } from "../../models";
 import { Observable, throwError } from "rxjs";
 import { catchError, map } from "rxjs/operators";
 
@@ -12,7 +12,7 @@ export class ApiClientService {
 
     constructor(private http: HttpClient) {}
 
-    search(queryParams: QueryParams): Observable<Array<MovieModel>> {
+    search(queryParams: QueryParams): Observable<MovieModel[]> {
         return this.get(queryParams.getString())
             .pipe(map((response: SearchResponse) => {
                 queryParams.setHasNextPage(response);
@@ -20,9 +20,9 @@ export class ApiClientService {
             }));
     }
 
-    findOne(id: string): Observable<any> {
+    findOne(id: string): Observable<MovieDetailsModel> {
         return this.get(`?i=${id}`)
-            .pipe(map((movieDetails: any) => {
+            .pipe(map((movieDetails: MovieDetailsModel) => {
                 return movieDetails;
             }));
     }
